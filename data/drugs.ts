@@ -2244,6 +2244,7 @@ export const drugs: Drug[] = [
   ...newDrugs3,
   ...newDrugs4,
   ...newDrugs5,
+  ...newDrugs6,
   ...newDrugs7,
   ...newDrugs8,
   ...newDrugs9,

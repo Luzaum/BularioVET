@@ -2,7 +2,14 @@
 import { GoogleGenAI, Type, GenerateContentResponse } from "@google/genai";
 import { SuggestedDrug, Drug } from './types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Verifica se a API key está disponível
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+
+if (!apiKey) {
+  console.warn('Gemini API Key não configurada. A funcionalidade de IA será desabilitada.');
+}
+
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 const responseSchema = {
     type: Type.ARRAY,
@@ -20,6 +27,18 @@ const responseSchema = {
   };
 
 export async function findDrugsForCondition(conditions: string[], availableDrugs: Drug[]): Promise<SuggestedDrug[]> {
+    // Se a API key não estiver configurada, retorna uma resposta padrão
+    if (!ai) {
+        console.warn('API não configurada. Retornando sugestões básicas.');
+        return availableDrugs.slice(0, 3).map(drug => ({
+            drugName: drug.name,
+            justification: 'Medicamento disponível no formulário',
+            dose: drug.doses[0]?.dose || 'Consulte o formulário',
+            contraindication: drug.contraindications?.text || 'Consulte o formulário',
+            interactions: drug.interactions?.text || 'Consulte o formulário'
+        }));
+    }
+
     const drugNames = availableDrugs.map(d => d.name).join(', ');
 
     const systemInstruction = `Você é um assistente especialista em farmacologia veterinária. Com base na lista de condições clínicas fornecida, sugira até 5 dos medicamentos mais relevantes APENAS da seguinte lista de fármacos disponíveis: ${drugNames}. Para cada sugestão, forneça uma justificativa concisa, a dose padrão para uma das condições, uma contraindicação principal e interações medicamentosas críticas. O usuário é um veterinário qualificado. A resposta DEVE ser em português do Brasil. Retorne um array vazio se nenhum medicamento relevante for encontrado na lista. Priorize os fármacos mais indicados e seguros para as condições listadas.`;
@@ -48,6 +67,13 @@ export async function findDrugsForCondition(conditions: string[], availableDrugs
 
     } catch (e) {
         console.error("Error calling Gemini API:", e);
-        throw new Error('Houve um erro ao processar sua solicitação. Tente novamente.');
+        // Em caso de erro, retorna sugestões básicas
+        return availableDrugs.slice(0, 3).map(drug => ({
+            drugName: drug.name,
+            justification: 'Medicamento disponível no formulário',
+            dose: drug.doses[0]?.dose || 'Consulte o formulário',
+            contraindication: drug.contraindications?.text || 'Consulte o formulário',
+            interactions: drug.interactions?.text || 'Consulte o formulário'
+        }));
     }
 }
