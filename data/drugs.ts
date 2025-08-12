@@ -20,6 +20,9 @@ import { newDrugs18 } from './new_drugs18';
 import { newDrugs19 } from './new_drugs19';
 import { newDrugs20 } from './new_drugs20';
 import { newDrugs21 } from './new_drugs21';
+import { newDrugs22 } from './new_drugs_22';
+import { newDrugs23 } from './new_drugs_23';
+import { newDrugs24 } from './new_drugs_24';
 
 export const drugs: Drug[] = [
   {
@@ -2245,5 +2248,8 @@ export const drugs: Drug[] = [
   ...newDrugs18,
   ...newDrugs19,
   ...newDrugs20,
-  ...newDrugs21
+  ...newDrugs21,
+  ...newDrugs22,
+  ...newDrugs23,
+  ...newDrugs24
 ];

@@ -44,11 +44,12 @@ Para usar a funcionalidade de IA:
 
 ## 📊 Dados
 
-O app contém **105 medicamentos** organizados em:
-- 21 arquivos de dados (`new_drugs.ts` até `new_drugs_21.ts`)
+O app contém **125 medicamentos** organizados em:
+- 24 arquivos de dados (`new_drugs.ts` até `new_drugs_24.ts`)
 - Cada arquivo contém 5 medicamentos
 - Informações completas: mecanismo, doses, contraindicações, etc.
 - **Todos os medicamentos Zolpidem foram removidos**
+- **20 novos medicamentos adicionados com informações complementadas por IA**
 
 ## 🛠️ Tecnologias
 
@@ -86,3 +87,36 @@ Todos os medicamentos que começavam com "Zolpidem" foram removidos:
 - Zolpidem Hemifosfato
 - Zolpidem Hemibrometo
 - E todas as outras variações
+
+## ✅ Novos Medicamentos Adicionados
+
+**20 novos medicamentos** foram adicionados com informações complementadas por IA:
+
+### Arquivo new_drugs_22.ts:
+- Ácido Fusídico 2% (Gel) - Antibiótico tópico para Gram+
+- Ácido Salicílico 2% (Limpador) - Queratolítico para seborreia
+- Butorfanol - Agonista-antagonista opioide para sedação
+- Calcitriol - Vitamina D ativa para DRC
+- Capromorelina - Estimulante de apetite
+
+### Arquivo new_drugs_23.ts:
+- Carbonato de Lantânio - Quelante de fósforo não cálcico
+- Carboplatina - Antineoplásico para tumores sólidos
+- Carprofeno - AINE COX-2 preferencial para dor osteoarticular
+- Carvão Ativado - Adsorvente entérico para intoxicações
+- Cefadroxil - Cefalosporina 1ª geração oral
+
+### Arquivo new_drugs_24.ts:
+- Cefalexina - Pilar em piodermite canina
+- Cefazolina - Profilaxia perioperatória
+- Metilprednisolona Acetato - Corticosteroide depósito
+- Metimazol - Antitireoidiano felino
+- Metoclopramida - Pró-cinético/antiemético
+
+**Todos os medicamentos incluem:**
+- Informações completas complementadas por IA
+- Doses específicas para cães e gatos
+- Contraindicações e efeitos adversos
+- Interações medicamentosas
+- Monitoramento necessário
+- Tooltips informativos ("botões ?")
