@@ -20,20 +20,6 @@ import { newDrugs18 } from './new_drugs18';
 import { newDrugs19 } from './new_drugs19';
 import { newDrugs20 } from './new_drugs20';
 import { newDrugs21 } from './new_drugs21';
-import { newDrugs22 } from './new_drugs22';
-import { newDrugs23 } from './new_drugs23';
-import { newDrugs24 } from './new_drugs24';
-import { newDrugs25 } from './new_drugs25';
-import { newDrugs26 } from './new_drugs26';
-import { newDrugs27 } from './new_drugs27';
-import { newDrugs28 } from './new_drugs_28';
-import { newDrugs29 } from './new_drugs_29';
-import { newDrugs30 } from './new_drugs_30';
-import { newDrugs31 } from './new_drugs_31';
-import { newDrugs32 } from './new_drugs_32';
-import { newDrugs33 } from './new_drugs_33';
-import { newDrugs34 } from './new_drugs_34';
-import { newDrugs35 } from './new_drugs_35';
 
 export const drugs: Drug[] = [
   {
@@ -2259,19 +2245,5 @@ export const drugs: Drug[] = [
   ...newDrugs18,
   ...newDrugs19,
   ...newDrugs20,
-  ...newDrugs21,
-  ...newDrugs22,
-  ...newDrugs23,
-  ...newDrugs24,
-  ...newDrugs25,
-  ...newDrugs26,
-  ...newDrugs27,
-  ...newDrugs28,
-  ...newDrugs29,
-  ...newDrugs30,
-  ...newDrugs31,
-  ...newDrugs32,
-  ...newDrugs33,
-  ...newDrugs34,
-  ...newDrugs35
+  ...newDrugs21
 ];

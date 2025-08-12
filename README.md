@@ -6,10 +6,10 @@ Aplicação web para consulta de medicamentos veterinários com funcionalidade d
 
 Os seguintes problemas foram corrigidos:
 
-1. **Arquivo CSS faltando**: Criado `index.css` com estilos customizados
-2. **API Key não configurada**: Modificado `api.ts` para funcionar sem API key
-3. **Tailwind CDN em produção**: Removido CDN e adicionado CSS customizado
-4. **newDrugs6 faltando**: Adicionado ao array de medicamentos
+1. **Design restaurado**: Voltou ao design original com Tailwind CSS
+2. **Medicamentos Zolpidem removidos**: Todos os medicamentos que começam com "Zolpidem" foram removidos
+3. **Arquivos de dados limpos**: Removidos arquivos desnecessários
+4. **API Key opcional**: App funciona sem API key configurada
 
 ## 🚀 Como Executar
 
@@ -44,18 +44,19 @@ Para usar a funcionalidade de IA:
 
 ## 📊 Dados
 
-O app contém **180 medicamentos** organizados em:
-- 35 arquivos de dados (`new_drugs.ts` até `new_drugs_35.ts`)
+O app contém **105 medicamentos** organizados em:
+- 21 arquivos de dados (`new_drugs.ts` até `new_drugs_21.ts`)
 - Cada arquivo contém 5 medicamentos
 - Informações completas: mecanismo, doses, contraindicações, etc.
+- **Todos os medicamentos Zolpidem foram removidos**
 
 ## 🛠️ Tecnologias
 
 - React 19
 - TypeScript
 - Vite
+- Tailwind CSS (CDN)
 - Google Gemini AI (opcional)
-- CSS customizado
 
 ## 📝 Funcionalidades
 
@@ -65,3 +66,23 @@ O app contém **180 medicamentos** organizados em:
 - ✅ Sugestões de IA (se API key configurada)
 - ✅ Interface responsiva
 - ✅ Tooltips informativos
+- ✅ Design original restaurado
+
+## 🗑️ Medicamentos Removidos
+
+Todos os medicamentos que começavam com "Zolpidem" foram removidos:
+- Zolpidem (base)
+- Zolpidem Tartarato
+- Zolpidem Sulfato
+- Zolpidem Cloridrato
+- Zolpidem Hemisulfato
+- Zolpidem Hemimaleato
+- Zolpidem Hemitorato
+- Zolpidem Hemifumarato
+- Zolpidem Hemioxalato
+- Zolpidem Hemicitrato
+- Zolpidem Hemisuccinato
+- Zolpidem Hemiadipato
+- Zolpidem Hemifosfato
+- Zolpidem Hemibrometo
+- E todas as outras variações
